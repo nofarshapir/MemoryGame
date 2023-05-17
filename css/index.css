@@ -1,0 +1,17 @@
+body {
+  font-family: "Montserrat Alternates", sans-serif;
+  background-color: hsla(208, 80%, 98%, 1);
+  padding: 0 10rem;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.img-fluid {
+  width: 70%;
+  height: auto;
+  margin: 0 auto;
+}
