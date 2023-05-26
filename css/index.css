@@ -1,6 +1,6 @@
 body {
   font-family: "Montserrat Alternates", sans-serif;
-  background-color: hsla(208, 80%, 98%, 1);
+  background-color: #ecf0ff !important; /* hsla(208, 80%, 98%, 1);*/
   padding: 0 10rem;
   margin: 0;
   height: 100vh;
@@ -14,4 +14,84 @@ body {
   width: 70%;
   height: auto;
   margin: 0 auto;
+}
+
+.card-main {
+  background: linear-gradient(
+    321deg,
+    rgb(230 166 49) 0%,
+    rgb(240 229 210) 100%
+  );
+}
+.btn-primary {
+  background-color: #c99b11 !important;
+  color: white;
+  font-weight: 600;
+  border: 1px solid #bb8918 !important;
+}
+.btn:hover {
+  color: white !important;
+}
+.btn-primary:not(:disabled):not(.disabled):active {
+  border: 1px solid #bb8918;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgb(239 194 104 / 50%) !important;
+}
+
+.board {
+  border-radius: 25px;
+  background-color: #fff;
+  width: 100%;
+  height: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.board-side,
+.info-side {
+  display: inline-block;
+}
+.game-img {
+  width: 70px;
+  height: auto;
+}
+.info-side {
+  background: rgb(230, 117, 21);
+  height: 100%;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  width: 35%;
+  border-top-left-radius: 25px 25px;
+  border-bottom-left-radius: 25px 25px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.board-lable {
+  font-size: 30px !important;
+  color: rgb(254, 186, 61) !important;
+  font-weight: 500;
+  -webkit-text-stroke: 1px rgb(255 206 117);
+  font-family: cursive;
+  text-align: center;
+}
+
+.board-label-content {
+  background-color: rgb(140, 83, 13);
+  border-radius: 10px;
+  margin: 0 3px 0 3px;
+  font-weight: 300;
+}
+.text {
+  font-size: 10px;
+}
+.tiny-logo {
+  width: 80px;
+  height: auto;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  margin: 0 auto;
+  margin-top: auto;
 }
