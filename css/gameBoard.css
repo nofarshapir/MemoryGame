@@ -1,0 +1,22 @@
+body {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.top_div{
+  display: flex;
+  width: 100vw;
+  flex-basis:100vw;
+}
+
+.input{
+  flex-basis:80vw;
+}
+
+.input_button{
+  
+}
+
+.container{
+  
+}
