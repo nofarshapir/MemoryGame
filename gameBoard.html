@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="./javascript/gameHandler.js" type="text/javascript"></script>
     <link href="./css/index.css" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -9,16 +8,123 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="./javascript/gameHandler.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Memory Game</title>
   </head>
   <body>
     <section class="vh-100" style="background-color: #ecf0ff">
       <div class="container h-100">
-        <div class="time-container">
-          Time:<span id="minutes">00</span>:<span id="seconds">00</span>
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-lg-12 col-xl-11">
+            <div class="board text-black" style="border-radius: 25px">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  <div class="info-side">
+                    <div class="time-container board-lable">
+                      Time<br />
+                      <div class="board-label-content">
+                        <span id="minutes">00</span>:<span id="seconds"
+                          >00</span
+                        >
+                      </div>
+                    </div>
+                    <br />
+                    <div class="board-lable">
+                      Score
+                      <div class="board-label-content">
+                        <span id="score">0</span>
+                      </div>
+                    </div>
+                    <br /><br />
+                    <div>
+                      <i
+                        class="fa fa-arrow-left"
+                        onClick="window.location.href = 'index.html'"
+                        style="
+                          font-size: 24px;
+                          display: table;
+                          margin: 0 auto;
+                          cursor: pointer;
+                        "
+                      ></i>
+                    </div>
+                    <br /><br />
+                    <div class="text">
+                      User name: <span id="user-name"></span>
+                    </div>
+                    <div class="text">
+                      Cards number: <span id="cards-number"></span>
+                    </div>
+                    <div class="tiny-logo">
+                      <img
+                        src="./Logo/Logo.png"
+                        class="img-fluid"
+                        alt="Sample image"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!--Images Boarder Section-->
+                <div
+                  class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
+                >
+                  <div class="board-side">
+                    <div class="container" id="container">
+                      <div class="row p-md-1">
+                        <div class="card">
+                          <img
+                            src="./card images/image1.jpg"
+                            class="game-img img-rounded"
+                          />
+                        </div>
+                      </div>
+                      <div class="row p-md-1">
+                        <div class="card">
+                          <img
+                            src="./card images/image2.jpg"
+                            class="game-img img-rounded"
+                          />
+                        </div>
+                      </div>
+                      <div class="row p-md-1">
+                        <div class="card">
+                          <img
+                            src="./card images/image2.jpg"
+                            class="game-img img-rounded"
+                          />
+                        </div>
+                      </div>
+                      <div class="row p-md-1">
+                        <div class="card">
+                          <img
+                            src="./card images/image2.jpg"
+                            class="game-img img-rounded"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    <script>
+      const username = localStorage.getItem("user-name");
+      const cardsnum = localStorage.getItem("cards-number");
+
+      document.getElementById("user-name").textContent = username;
+      document.getElementById("cards-number").textContent = cardsnum;
+      console.log("after transfer");
+    </script>
   </body>
 </html>
