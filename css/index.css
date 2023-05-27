@@ -48,7 +48,7 @@ body {
   margin: 0 auto;
   margin-top: 30px;
 }
-.board-side,
+.memory-game,
 .info-side {
   display: inline-block;
 }
@@ -57,11 +57,14 @@ body {
   height: auto;
 }
 .info-side {
-  background: rgb(230, 117, 21);
+  background: linear-gradient(
+    144deg,
+    rgb(230, 117, 21) 40%,
+    rgb(255 255 255) 85%
+  ); /* rgb(230, 117, 21);*/
   height: 100%;
   padding-top: 25px;
   padding-bottom: 10px;
-  width: 35%;
   border-top-left-radius: 25px 25px;
   border-bottom-left-radius: 25px 25px;
   min-height: 100%;
@@ -94,4 +97,199 @@ body {
   display: flex;
   margin: 0 auto;
   margin-top: auto;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Fredoka", sans-serif;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.topTools {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0 10px 0;
+}
+
+.topTools .time {
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+}
+
+.topTools img {
+  width: 20px;
+  height: 20px;
+}
+
+/*card container */
+.memory-game {
+  width: 550px;
+  margin: auto;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+.memory-card {
+  margin: 5px;
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  position: relative;
+  transform: scale(1);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  box-shadow: 5px 2px 20px 0 rgba(82, 102, 117, 0.5);
+  width: calc(20% - 10px) !important;
+  height: calc(27% - 10px) !important;
+}
+
+.memory-card:hover {
+  cursor: pointer;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.memory-card.flip {
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 5px;
+}
+
+.back-face {
+  background-color: #d87b34;
+}
+
+.front-face {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-color: white;
+}
+
+img {
+  width: 100px;
+}
+
+/*congrats section (gameWon) */
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block;
+}
+
+#congratsSection {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+#congratsDiv {
+  width: 300px;
+  background: white;
+  color: #6186aa;
+  padding: 20px 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.final {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+.again {
+  font-size: 20px;
+  font-weight: bold;
+  color: #6186aa;
+  text-decoration: none;
+  margin: auto;
+  padding: 10px 20px;
+  width: 160px;
+  border: solid 1px;
+  border-radius: 5px;
+}
+
+.again:hover {
+  background: #6186aa;
+  background-image: linear-gradient(
+    321deg,
+    rgb(230 166 49) 0%,
+    rgb(240 229 210) 100%
+  );
+  background-size: 250%;
+  color: white;
+  cursor: pointer;
+}
+
+/*responsive*/
+@media only screen and (max-width: 768px) {
+  h1 {
+    margin-top: 100px;
+    font-size: 22px;
+  }
+
+  .topTools {
+    margin: 20px 0 20px 0;
+  }
+
+  .topTools .time {
+    font-weight: thin;
+    font-size: 18px;
+  }
+
+  .topTools img {
+    width: 17px;
+    height: 17px;
+  }
+
+  .memory-card {
+    margin: 5px;
+    width: calc(33.333% - 10px);
+    height: calc(25% - 10px);
+  }
 }
