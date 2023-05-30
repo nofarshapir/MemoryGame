@@ -25,78 +25,75 @@
   </head>
   <body>
     <section
-      class="vh-100 board text-black"
-      style="
-        background-color: #fff;
-        border-radius: 25px;
-        margin-bottom: 25px;
-        overflow: auto;
-        padding-bottom: 25px;
-      "
+      class="board text-black"
+      style="border-radius: 25px; margin-bottom: 20px; padding-bottom: 5px"
     >
-      <div class="row justify-content-center" style="height: 100%">
-        <div class="col-2">
-          <section class="info-side">
-            <div class="time-container board-lable">
-              Time<br />
-              <div class="time board-label-content">
-                <span class="minute">00</span>
-                <span>:</span>
-                <span class="second">00</span>
-              </div>
+      <!--Information side bar Section-->
+      <div class="row justify-content-center">
+        <div class="col-1 info-side">
+          <div class="time-container board-lable">
+            Time<br />
+            <div class="time board-label-content">
+              <span class="minute">00</span>
+              <span>:</span>
+              <span class="second">00</span>
             </div>
-            <br />
-            <div class="board-lable">
-              Score
-              <div class="board-label-content">
-                <span id="score">0</span>
-              </div>
+          </div>
+          <br />
+          <div class="board-lable">
+            Score
+            <div class="board-label-content">
+              <span id="score">0</span>
             </div>
-            <br /><br />
-            <span class="refresh"
-              ><i
-                class="fa fa-refresh"
-                aria-hidden="true"
-                alt="refreshImage"
-                style="
-                  font-size: 20px;
-                  display: table;
-                  margin: 0 auto;
-                  cursor: pointer;
-                "
-              ></i>
-            </span>
+          </div>
+          <br /><br />
+          <span class="refresh"
+            ><i
+              class="fa fa-refresh"
+              aria-hidden="true"
+              alt="refreshImage"
+              style="
+                font-size: 20px;
+                display: table;
+                margin: 0 auto;
+                cursor: pointer;
+              "
+            ></i>
+          </span>
 
-            <br /><br />
-            <div class="text" style="display: none">
-              User name:
-              <span id="user-name"></span>
-            </div>
-            <div class="text" style="display: none">
-              Cards number: <span id="cards-number"></span>
-            </div>
-            <br /><br />
-            <div>
-              <i
-                class="fa fa-arrow-left"
-                onClick="window.location.href = 'index.html'"
-                style="
-                  font-size: 24px;
-                  display: table;
-                  margin: 0 auto;
-                  cursor: pointer;
-                "
-              ></i>
-            </div>
-            <div class="tiny-logo">
-              <img src="./Logo/Logo.png" class="img-fluid" alt="Sample image" />
-            </div>
-          </section>
+          <br /><br />
+          <div class="text" style="display: none">
+            User name:
+            <span id="user-name"></span>
+          </div>
+          <div class="text" style="display: none">
+            Cards number: <span id="cards-number"></span>
+          </div>
+          <br /><br />
+          <div>
+            <i
+              class="fa fa-arrow-left"
+              onClick="window.location.href = 'index.html'"
+              style="
+                font-size: 24px;
+                display: table;
+                margin: 0 auto;
+                cursor: pointer;
+              "
+            ></i>
+            <br />
+          </div>
+          <div class="tiny-logo">
+            <img src="./Logo/Logo.png" class="img-fluid" alt="Sample image" />
+          </div>
         </div>
 
-        <div class="col-10">
-          <!--Images Boarder Section-->
-          <section class="memory-game" id="memory-game"></section>
+        <!--Images Boarder Section-->
+        <div class="col-11">
+          <div
+            class="memory-game justify-content-center"
+            id="memory-game"
+          ></div>
 
           <section id="congratsSection" class="hidden">
             <div id="congratsDiv">
