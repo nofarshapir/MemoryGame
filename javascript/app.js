@@ -128,7 +128,7 @@ function unFlipCards() {
     firstCard.classList.remove("flip");
     secondCard.classList.remove("flip");
     resetBoard();
-  }, 700);
+  }, 1000);
 }
 
 function resetBoard() {
@@ -148,12 +148,18 @@ function startTime() {
   if (click === -1) {
     interval = setInterval(function () {
       //interval allows it to work continuously at certain intervals.
-      final.innerHTML = "You won in " + finalTime + " time!";
+      final.innerHTML =
+        localStorage.getItem("user-name") +
+        ", you won " +
+        score +
+        " points in " +
+        finalTime +
+        "! Good Job";
       finalTime = minute.innerHTML + ":" + second.innerHTML;
       totalSeconds++;
       second.innerHTML = pad(totalSeconds % 60);
       minute.innerHTML = pad(parseInt(totalSeconds / 60));
-    }, 1000);
+    }, 700);
   }
   click = 1;
 }
@@ -178,14 +184,17 @@ function gameWon() {
   if (document.getElementsByClassName("flip").length === numPairs * 2) {
     congratsSection.classList.replace("hidden", "show");
     clearInterval(interval);
-    finalTime = minute.innerHTML + ":" + second.innerHTML;
+    if (minute.innerHTML == "00") finalTime = second.innerHTML + " second";
+    else
+      finalTime =
+        minute.innerHTML + " minutes and " + second.innerHTML + " second";
     final.innerHTML =
       localStorage.getItem("user-name") +
-      ", you won in " +
-      finalTime +
-      " time and got " +
+      ", you won " +
       score +
-      " points! Good Job ";
+      " points in " +
+      finalTime +
+      "! Good Job";
     totalTime.innerHTML = finalTime;
   }
   click = 0;
